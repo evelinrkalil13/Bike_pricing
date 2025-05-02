@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standar]
+jinja2
+python-multipart
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
