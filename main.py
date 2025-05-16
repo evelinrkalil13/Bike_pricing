@@ -45,7 +45,13 @@ async def CalcularPrecio(
     )
  
  
-@app.post("/post")
-async def post_metho(data: dict):
-    return {"message": "Hola de nuevo", "data": data}
+@app.post("/api/predict")
+async def api_predict(request:Request):
+    data = await request.json()
+    df = pd.DataFrame(data)
+    model= load_model('models/model.pkl')
+    prediction = model.predict(df)
+    return {"message": "Hola, el resultado es: ", "prediction": prediction[0]}
  
+
+    
